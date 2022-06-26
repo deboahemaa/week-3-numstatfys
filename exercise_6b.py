@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random
 
+# function to make a random spin configuration of L x L 
 def lattice(L):
     matrix = np.random.random((L, L))
     x_max = L
@@ -10,12 +11,13 @@ def lattice(L):
 
     for x in np.arange(x_max):
         for y in np.arange(y_max):
-            if matrix[x,y] < 0.5:
+            if matrix[x,y] < 0.5: # Change to 1 for first part of the exercise
                 spin[x,y] = 0.5
             else:
                 spin[x,y] = -0.5
     return spin
 
+# Function to calculate the energy of a randomized spin configuration
 def hamiltonian(L):
     spin = lattice(L)
     x_max = L
@@ -56,6 +58,7 @@ def delta_E(L):
 def dE_easy():
     return 2
 
+# function to calculate the magnetization
 def magnetization(L):
     dE = delta_E(L)
     dH = dE[0]
@@ -71,7 +74,7 @@ def magnetization(L):
         
     
     print("The difference in energy between the two spin states is:", dH)
-    print("The magnetisation is:", M)
+    print("The magnetization is:", M)
     #print("Original spin onfiguration")
     #print(c)
     #print("Augmented spin configuration")
