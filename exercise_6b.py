@@ -11,7 +11,7 @@ def lattice(L):
 
     for x in np.arange(x_max):
         for y in np.arange(y_max):
-            if matrix[x,y] < 0.5: # Change to 1 for first part of the exercise
+            if matrix[x,y] < 0.5: # Change to any number greater than 1 for first part of the exercise
                 spin[x,y] = 0.5
             else:
                 spin[x,y] = -0.5
